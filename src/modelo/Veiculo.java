@@ -1,20 +1,23 @@
+package modelo;
+
 import java.util.ArrayList;
 import java.util.Scanner;
         
-package minha.loja;
 
-class Veiculos {
+    class Veiculo{
     
     private String modelo;
     private String cor;
     private String placa;
+    private String categoria;
+    
+    public Veiculo (String modelo, String cor, String placa, String categoria) {
 
-    public Veiculo(String modelo, String cor, String placa) {
         this.modelo = modelo;
         this.cor = cor;
         this.placa = placa;
+        this.categoria = categoria;
     }
-
     public String getModelo() {
         return modelo;
     }
@@ -27,17 +30,22 @@ class Veiculos {
         return placa;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
     @Override
     public String toString() {
-        return "Modelo: " + modelo + ", Cor: " + cor + ", Placa: " + placa;
+        return "Modelo: " + modelo + ", Cor: " + cor + ", Placa: " + placa + ", Categoria:" + categoria;
     }
-}
+   
 
-public class EmpresaPlacasVeiculos {
+
     public static void main(String[] args) {
         ArrayList<Veiculo> veiculos = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-
+        Minha.Loja loja = new Minha.Loja(); 
+        
         while (true) {
             System.out.println("\nMenu:");
             System.out.println("1. Adicionar veículo");
@@ -54,7 +62,10 @@ public class EmpresaPlacasVeiculos {
                     String cor = scanner.next();
                     System.out.print("Digite a placa do veículo: ");
                     String placa = scanner.next();
-                    veiculos.add(new Veiculo(modelo, cor, placa));
+                    System.out.print("Digite a categoria do veículo: ");
+                    String categoria = scanner.next();
+                    
+                    veiculos.add(loja.new Veiculo(modelo, cor, placa, categoria));
                     System.out.println("Veículo adicionado com sucesso!");
                     break;
                 case 2:
@@ -72,4 +83,4 @@ public class EmpresaPlacasVeiculos {
             }
         }
     }
-}
+ }
