@@ -44,7 +44,7 @@ import java.util.Scanner;
     public static void main(String[] args) {
         ArrayList<Veiculo> veiculos = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        Minha.Loja loja = new Minha.Loja(); 
+        
         
         while (true) {
             System.out.println("\nMenu:");
@@ -65,7 +65,7 @@ import java.util.Scanner;
                     System.out.print("Digite a categoria do veículo: ");
                     String categoria = scanner.next();
                     
-                    veiculos.add(loja.new Veiculo(modelo, cor, placa, categoria));
+                    veiculos.add(new Veiculo(modelo, cor, placa, categoria));
                     System.out.println("Veículo adicionado com sucesso!");
                     break;
                 case 2:
