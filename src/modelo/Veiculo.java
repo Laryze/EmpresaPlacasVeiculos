@@ -48,28 +48,28 @@ import java.util.Scanner;
         
         while (true) {
             System.out.println("\nMenu:");
-            System.out.println("1. Adicionar veículo");
-            System.out.println("2. Mostrar todos os veículos");
+            System.out.println("1. Adicionar veiculo");
+            System.out.println("2. Mostrar todos os veiculos");
             System.out.println("3. Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
             int opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1:
-                    System.out.print("Digite o modelo do veículo: ");
+                    System.out.print("Digite o modelo do veiculo: ");
                     String modelo = scanner.next();
-                    System.out.print("Digite a cor do veículo: ");
+                    System.out.print("Digite a cor do veiculo: ");
                     String cor = scanner.next();
-                    System.out.print("Digite a placa do veículo: ");
+                    System.out.print("Digite a placa do veiculo: ");
                     String placa = scanner.next();
-                    System.out.print("Digite a categoria do veículo: ");
+                    System.out.print("Digite a categoria do veiculo: ");
                     String categoria = scanner.next();
                     
                     veiculos.add(new Veiculo(modelo, cor, placa, categoria));
-                    System.out.println("Veículo adicionado com sucesso!");
+                    System.out.println("Veiculo adicionado com sucesso!");
                     break;
                 case 2:
-                    System.out.println("Lista de veículos:");
+                    System.out.println("Lista de veiculos:");
                     for (Veiculo veiculo : veiculos) {
                         System.out.println(veiculo);
                     }
