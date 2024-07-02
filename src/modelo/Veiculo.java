@@ -4,24 +4,39 @@ import java.util.ArrayList;
 import java.util.Scanner;
         
 
-    class Veiculo{
+    public class Veiculo{
     
+    private String marca;    
     private String modelo;
+    private String ano_fabricacao;
     private String cor;
     private String placa;
     private String categoria;
     
-    public Veiculo (String modelo, String cor, String placa, String categoria) {
+    
+    public Veiculo (String marca, String modelo, String ano_fabricacao, String cor, String placa, String categoria) {
 
+        this.marca = marca;
         this.modelo = modelo;
+        this.ano_fabricacao = ano_fabricacao;
         this.cor = cor;
         this.placa = placa;
         this.categoria = categoria;
+        
+        
     }
+    public String getMarca() {
+        return marca;
+    }
+    
     public String getModelo() {
-        return modelo;
+        return modelo;    
     }
-
+    
+    public String getAno_fabricacao() {
+        return ano_fabricacao;
+    }
+    
     public String getCor() {
         return cor;
     }
@@ -36,7 +51,7 @@ import java.util.Scanner;
 
     @Override
     public String toString() {
-        return "Modelo: " + modelo + ", Cor: " + cor + ", Placa: " + placa + ", Categoria:" + categoria;
+        return "Marca: " + marca + ", Modelo: " + modelo + ", Ano_fabricacao: " + ano_fabricacao +  ", Cor: " + cor + ", Placa: " + placa + ", Categoria:" + categoria;
     }
    
 
@@ -56,6 +71,11 @@ import java.util.Scanner;
 
             switch (opcao) {
                 case 1:
+                    
+                    System.out.print("Digite a marca do veiculo: ");
+                    String marca = scanner.next();
+                    System.out.print("Digite o ano de fabricacao do veiculo: ");
+                    String ano_fabricacao = scanner.next();
                     System.out.print("Digite o modelo do veiculo: ");
                     String modelo = scanner.next();
                     System.out.print("Digite a cor do veiculo: ");
@@ -65,7 +85,7 @@ import java.util.Scanner;
                     System.out.print("Digite a categoria do veiculo: ");
                     String categoria = scanner.next();
                     
-                    veiculos.add(new Veiculo(modelo, cor, placa, categoria));
+                    veiculos.add(new Veiculo(marca, modelo, ano_fabricacao, cor, placa, categoria));
                     System.out.println("Veiculo adicionado com sucesso!");
                     break;
                 case 2:
